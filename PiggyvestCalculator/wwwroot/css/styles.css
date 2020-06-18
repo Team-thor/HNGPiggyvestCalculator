@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 10px 20px;
   width: 250px;
-  background-color: rgb(0, 44, 177);
+  background-color: #10375c;
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -23,7 +23,7 @@ body {
  
 .sidebar a.active {
   background-color: whitesmoke;
-  color: rgb(0, 44, 177);
+  color: #10375c;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   border-top-left-radius: 10px;
@@ -57,13 +57,28 @@ div.content {
 #logo{
   font-size: 2.5em;
 }
-#calc{
+.calc{
   float: right;
+  color: #10375c;
+  cursor: pointer;
+  margin-top: -5px;
 } 
 .state{
   background-color: pink;
   border-radius: 50px;
   padding: 0 10px;
+}
+#message-text{
+  height: 80px !important;
+  padding: 2px 10px !important;
+}
+#interestCalculator span{
+  font-size: small;
+  font-weight: bold;
+  font-style: italic;
+}
+.inactive{
+  color: #10375c !important;
 }
 
 /* media query */
@@ -89,7 +104,7 @@ div.content {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 550px) {
   .sidebar a {
     text-align: center;
     float: none;
@@ -99,7 +114,10 @@ div.content {
     margin-top: 0;
   }
   .sidebar a.active {
-    background-color: rgb(0, 44, 177);
+    background-color: #10375c;
     color: white;
+  }
+  #message-text{
+    height: 100px !important;
   }
 }

@@ -1,57 +1,7 @@
-@* @{
-    ViewData["Title"] = "Simple Interest";
-}
+@ViewData["Title"]
 
-<div class="text-center">
-    <h4 class="display-4">Simple Interest Calculator</h4>
-</div>
-<div>
-    <form asp-controller="Calc" asp-action="Index" method="post">
-		<div>
-			<label>Amount</label>
-			<input type="text" placeholder="Enter Amount" name="amount" />
-			<span class="text-danger"></span>
-		</div>
-        <div>
-			<label>Interest Rate</label>
-			<input type="text" placeholder="Enter Interest rate" name="interestRate" />
-			<span class="text-danger"></span>
-		</div>
-        <div>
-			<label>Number of Years</label>
-			<input type="number" placeholder="Number of years" name="numberOfYears" />
-			<span class="text-danger"></span>
-		</div>
-        <button type="submit">Calculate</button>
-    </form>
-	
-@{
-    if (ViewBag.Result != null)
-    {
-        <div>
-            <p>@ViewBag.Result</p>
-        </div>
-    }
-}
-</div>
+<form asp-controller="Calc" asp-action="Index" method="post">
 
- *@
-@{
-    ViewData["Title"] = "Simple Interest";
-}
-@* <!DOCTYPE html>
-<html lang="en"> *@
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="~/css/styles.css">
-    </head>
-    <body>
-    <!-- The sidebar -->
         <div class="sidebar">
             <h1 class="text-white font-weight-bold mb-4" id="logo">piggyvest</h1>
             <a href="" class="font-weight-bold">Home</a>
@@ -95,19 +45,19 @@
             </div>
 
             <!-- invest content -->
-            <div class="row move-up">
+            <div class="row move-up mb-3">
                <div class="col-md-8">
                     <div class="card">
                         <div class="card-header">
                             <ul class="nav nav-tabs card-header-tabs">
                                 <li class="nav-item">
-                                  <a class="nav-link text-info" href="#">My Investments</a>
+                                  <a class="nav-link inactive" href="#">My Investments</a>
                                 </li>
                                 <li class="nav-item">
                                   <a class="nav-link active" href="#">Explore</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link text-info" href="#" tabindex="-1" aria-disabled="true">Completed</a>
+                                  <a class="nav-link inactive" href="#" tabindex="-1" aria-disabled="true">Completed</a>
                                 </li>
                               </ul>                        
                         </div>
@@ -121,10 +71,10 @@
                                   <div class="col-md-8">
                                     <div class="card-body">
                                         <h5 class="card-title font-weight-bold">Maize Crop Investment</h5>
-                                        <p class="card-text py-0 my-0"><small class="text-success">24% </small><small class="text-muted">returns in 12 months</small></p>
+                                        <p class="card-text py-0 my-0"><small class="text-success interestPercentage">24% </small><small class="text-muted">returns in <strong class="investMonth">12</strong> months</small></p>
                                         <p class="card-text"><small class="text-info font-weight-bold"> #5,000 </small><small class="text-muted">per farm share</small></p>
                                         <button class="btn text-danger state"><small class="font-weight-bold">sold out</small></button>
-                                        <a href="#" data-toggle="tooltip" title="calculate your future returns!"><i class="fa fa-calculator fa-2x" aria-hidden="true" id="calc"></i></a>
+                                        <i class="fa fa-calculator fa-2x calc" aria-hidden="true" data-toggle="modal" data-target="#popUp" title="calculate your future returns!"></i>
                                     </div>
                                   </div>
                                 </div>
@@ -138,10 +88,10 @@
                                   <div class="col-md-8">
                                     <div class="card-body">
                                       <h5 class="card-title">Rice farm Investment</h5>
-                                      <p class="card-text py-0 my-0"><small class="text-success">14% </small><small class="text-muted">returns in 7 months</small></p>
+                                      <p class="card-text py-0 my-0"><small class="text-success interestPercentage">14% </small><small class="text-muted">returns in <strong class="investMonth">7</strong> months</small></p>
                                       <p class="card-text"><small class="text-info font-weight-bold"> #5,000 </small><small class="text-muted">per farm share</small></p>
                                       <button class="btn text-danger state"><small class="font-weight-bold">sold out</small></button>
-                                      <a href="#" data-toggle="tooltip" title="calculate your future returns!"><i class="fa fa-calculator fa-2x" aria-hidden="true" id="calc"></i></a>
+                                      <i class="fa fa-calculator fa-2x calc" aria-hidden="true" data-toggle="modal" data-target="#popUp" title="calculate your future returns!"></i>
                                     </div>
                                   </div>
                                 </div>
@@ -155,10 +105,10 @@
                                   <div class="col-md-8">
                                     <div class="card-body">
                                       <h5 class="card-title">Poultry Farm in South West Nigeria</h5>
-                                      <p class="card-text py-0 my-0"><small class="text-success">12% </small><small class="text-muted">returns in 6 months</small></p>
+                                      <p class="card-text py-0 my-0"><small class="text-success interestPercentage">12% </small><small class="text-muted">returns in <strong class="investMonth">6</strong> months</small></p>
                                       <p class="card-text"><small class="text-info font-weight-bold"> #5,000 </small><small class="text-muted">per unit</small></p>
                                       <button class="btn text-danger state"><small class="font-weight-bold">sold out</small></button>
-                                      <a href="#" data-toggle="tooltip" title="calculate your future returns!"><i class="fa fa-calculator fa-2x" aria-hidden="true" id="calc"></i></a>
+                                      <i class="fa fa-calculator fa-2x calc" aria-hidden="true" data-toggle="modal" data-target="#popUp" title="calculate your future returns!"></i>
                                     </div>
                                   </div>
                                 </div>
@@ -172,10 +122,10 @@
                                   <div class="col-md-8">
                                     <div class="card-body">
                                       <h5 class="card-title">Cattle Herder Stock Program Investment</h5>
-                                      <p class="card-text py-0 my-0"><small class="text-success">12% </small><small class="text-muted">returns in 6 months</small></p>
+                                      <p class="card-text py-0 my-0"><small class="text-success interestPercentage">12% </small><small class="text-muted">returns in <strong class="investMonth">6</strong> months</small></p>
                                       <p class="card-text"><small class="text-info font-weight-bold"> #5,000 </small><small class="text-muted">per unit</small></p>
                                       <button class="btn text-danger state"><small class="font-weight-bold">sold out</small></button>
-                                      <a href="#" data-toggle="tooltip" title="calculate your future returns!"><i class="fa fa-calculator fa-2x" aria-hidden="true" id="calc"></i></a>
+                                        <i class="fa fa-calculator fa-2x calc" aria-hidden="true" data-toggle="modal" data-target="#popUp" title="calculate your future returns!"></i>
                                     </div>
                                   </div>
                                 </div>
@@ -184,20 +134,52 @@
                     </div>
                </div>
             </div>
-
         </div> 
+        
 
+        <!-- modal -->
+        <div class="pop-up"> 
+          <div class="modal fade" id="popUp" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog" aria-labelledby="interestCalculator" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header py-2">
+                  <h5 class="modal-title" id="interestCalculator">Interest Calculator <span>(values are static & are for just test purpose)</span></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <!-- form -->
+                  <form>
+                    <div class="form-group py-0 my-0">
+                      <label for="amount-invested" class="col-form-label pt-0 mt-0">Amount:</label>
+                      <input type="text" class="form-control" disabled id="amount-invested" value="5000">
+                    </div>
+                    <div class="form-group py-0 my-0">
+                      <label for="interest-period" class="col-form-label">Period:</label>
+                      <input type="text" class="form-control" disabled id="interest-period" value="6">
+                    </div>
+                    <div class="form-group py-0 my-0">
+                      <label for="interest-rate" class="col-form-label">Rate:</label>
+                      <input type="text" class="form-control" disabled id="interest-rate" value="12">
+                    </div>
+                    <div class="form-group py-0 my-0">
+                      <label for="message-text" class="col-form-label">Result:</label>
+                      <textarea class="form-control" disabled id="message-text"> </textarea>
+                    </div>
+                  </form>
+                  <!-- end of form -->
+                </div>
+                <div class="modal-footer py-0 my-0">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close">Close</button>
+                  <button type="button" class="btn btn-success" id="send">Ok</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      </form>
 
-
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="~/js/main.js"></script>
-
-    </body>
-</html>
 @{
     if (ViewBag.Result != null)
     {
