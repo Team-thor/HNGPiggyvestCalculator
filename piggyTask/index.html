@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+    <!-- The sidebar -->
+        <div class="sidebar">
+            <h1 class="text-white font-weight-bold mb-4" id="logo">piggyvest</h1>
+            <a href="" class="font-weight-bold">Home</a>
+            <a href="" class="font-weight-bold">Savings</a>
+            <a href="" class="active font-weight-bold">Invest</a>
+            <a href="" class="font-weight-bold">Account</a>
+            <a href="" class="font-weight-bold" id="logout">Logout</a>
+        </div>
+    <!-- main content -->
+        <div class="content">
+            <h2 class="font-weigth-bold">Investify</h2>
+            
+            <!-- account -->
+            <div class="row mt-5">
+                <div class="col-md-8 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title text-uppercase title font-weight-bold">Total Balance</h5>
+                          <p class="card-text font-weight-bold" id="figure">&#8358; 0.00</p>
+                        </div>
+                        <div class="card-footer bg-white text-center text-capitalize">
+                          <i class="fa fa-search-plus" aria-hidden="true"></i> learn more
+                        </div>
+                      </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <div class="card mb-5">
+                        <div class="card-body">
+                          <h5 class="card-title text-uppercase title font-weight-bold">expected roi</h5>
+                          <p class="card-text my-0 py-0" id="per">up to 25% </p>
+                          <p class="card-text my-0 py-0 text-capitalize" >per annum </p>
+                        </div>
+                      </div>
+
+                      <h5 class="card-title text-uppercase title font-weight-bold" id="invt">investify</h5>
+                      <div class="card">
+                        <img src="./image/fin.jpg" class="card-img-top" alt="invest picture" style="height: 130px;">
+                      </div>
+                </div>
+            </div>
+
+            <!-- invest content -->
+            <div class="row move-up mb-3">
+               <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <ul class="nav nav-tabs card-header-tabs">
+                                <li class="nav-item">
+                                  <a class="nav-link inactive" href="#">My Investments</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link active" href="#">Explore</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link inactive" href="#" tabindex="-1" aria-disabled="true">Completed</a>
+                                </li>
+                              </ul>                        
+                        </div>
+                        <!-- end of internal nav -->
+                        <div class="card-body">
+                            <div class="card mb-3 stock" >
+                                <div class="row no-gutters">
+                                  <div class="col-md-4">
+                                    <img src="./image/maize.jpg" class="card-img" alt="maize">
+                                  </div>
+                                  <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title font-weight-bold">Maize Crop Investment</h5>
+                                        <p class="card-text py-0 my-0"><small class="text-success interestPercentage">24% </small><small class="text-muted">returns in <strong class="investMonth">12</strong> months</small></p>
+                                        <p class="card-text"><small class="text-info font-weight-bold"> #5,000 </small><small class="text-muted">per farm share</small></p>
+                                        <button class="btn text-danger state"><small class="font-weight-bold">sold out</small></button>
+                                        <i class="fa fa-calculator fa-2x calc" aria-hidden="true" data-toggle="modal" data-target="#popUp" title="calculate your future returns!"></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                                 <hr>
+                              <div class="card mb-3 stock" >
+                                <div class="row no-gutters">
+                                  <div class="col-md-4">
+                                    <img src="./image/rice.jpg" class="card-img" alt="rice">
+                                  </div>
+                                  <div class="col-md-8">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Rice farm Investment</h5>
+                                      <p class="card-text py-0 my-0"><small class="text-success interestPercentage">14% </small><small class="text-muted">returns in <strong class="investMonth">7</strong> months</small></p>
+                                      <p class="card-text"><small class="text-info font-weight-bold"> #5,000 </small><small class="text-muted">per farm share</small></p>
+                                      <button class="btn text-danger state"><small class="font-weight-bold">sold out</small></button>
+                                      <i class="fa fa-calculator fa-2x calc" aria-hidden="true" data-toggle="modal" data-target="#popUp" title="calculate your future returns!"></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <hr>
+                              <div class="card mb-3 stock" >
+                                <div class="row no-gutters">
+                                  <div class="col-md-4">
+                                    <img src="./image/hen.jpg" class="card-img" alt="poultry birds">
+                                  </div>
+                                  <div class="col-md-8">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Poultry Farm in South West Nigeria</h5>
+                                      <p class="card-text py-0 my-0"><small class="text-success interestPercentage">12% </small><small class="text-muted">returns in <strong class="investMonth">6</strong> months</small></p>
+                                      <p class="card-text"><small class="text-info font-weight-bold"> #5,000 </small><small class="text-muted">per unit</small></p>
+                                      <button class="btn text-danger state"><small class="font-weight-bold">sold out</small></button>
+                                      <i class="fa fa-calculator fa-2x calc" aria-hidden="true" data-toggle="modal" data-target="#popUp" title="calculate your future returns!"></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <hr>
+                              <div class="card mb-3 stock" >
+                                <div class="row no-gutters">
+                                  <div class="col-md-4">
+                                    <img src="./image/cattle.jpg" class="card-img" alt="cattle farm">
+                                  </div>
+                                  <div class="col-md-8">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Cattle Herder Stock Program Investment</h5>
+                                      <p class="card-text py-0 my-0"><small class="text-success interestPercentage">12% </small><small class="text-muted">returns in <strong class="investMonth">6</strong> months</small></p>
+                                      <p class="card-text"><small class="text-info font-weight-bold"> #5,000 </small><small class="text-muted">per unit</small></p>
+                                      <button class="btn text-danger state"><small class="font-weight-bold">sold out</small></button>
+                                        <i class="fa fa-calculator fa-2x calc" aria-hidden="true" data-toggle="modal" data-target="#popUp" title="calculate your future returns!"></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div> 
+        
+
+        <!-- modal -->
+        <div class="pop-up"> 
+          <div class="modal fade" id="popUp" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog" aria-labelledby="interestCalculator" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header py-2">
+                  <h5 class="modal-title" id="interestCalculator">Interest Calculator <span>(values are static & are for just test purpose)</span></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <!-- form -->
+                  <form>
+                    <div class="form-group py-0 my-0">
+                      <label for="amount-invested" class="col-form-label pt-0 mt-0">Amount:</label>
+                      <input type="text" class="form-control" disabled id="amount-invested" value="5000">
+                    </div>
+                    <div class="form-group py-0 my-0">
+                      <label for="interest-period" class="col-form-label">Period:</label>
+                      <input type="text" class="form-control" disabled id="interest-period" value="6">
+                    </div>
+                    <div class="form-group py-0 my-0">
+                      <label for="interest-rate" class="col-form-label">Rate:</label>
+                      <input type="text" class="form-control" disabled id="interest-rate" value="12">
+                    </div>
+                    <div class="form-group py-0 my-0">
+                      <label for="message-text" class="col-form-label">Result:</label>
+                      <textarea class="form-control" disabled id="message-text"> </textarea>
+                    </div>
+                  </form>
+                  <!-- end of form -->
+                </div>
+                <div class="modal-footer py-0 my-0">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close">Close</button>
+                  <button type="button" class="btn btn-success" id="send">Ok</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="./main.js"></script>
+
+    </body>
+</html>
