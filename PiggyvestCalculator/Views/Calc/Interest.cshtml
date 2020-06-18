@@ -1,0 +1,37 @@
+ @{
+    ViewData["Title"] = "Simple Interest";
+    
+    }
+    
+<div class="text-center">
+    <h4 class="display-4">Simple Interest Calculator</h4>
+</div>
+<div>
+    <form asp-controller="Calc" asp-action="Index" method="post">
+		<div>
+			<label>Amount</label>
+			<input type="text" placeholder="Enter Amount" name="amount" />
+			<span class="text-danger"></span>
+		</div>
+        <div>
+			<label>Interest Rate</label>
+			<input type="text" placeholder="Enter Interest rate" name="interestRate" />
+			<span class="text-danger"></span>
+		</div>
+        <div>
+			<label>Number of Years</label>
+			<input type="number" placeholder="Number of years" name="numberOfYears" />
+			<span class="text-danger"></span>
+		</div>
+        <button type="submit">Calculate</button>
+    </form>
+	
+@{
+    if (ViewBag.Result != null)
+    {
+        <div>
+            <p>@ViewBag.Result</p>
+        </div>
+    }
+}
+</div>

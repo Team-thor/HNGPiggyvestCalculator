@@ -52,8 +52,14 @@
 
     @{
     ViewData["Title"] = "Simple Interest";
-    
+            float intRate =  ViewBag.amount = intRate;
+            double amountOfMoney= ViewBag.amountOfMoney;
+            double interestRates = ViewBag.interestRates;
+            double interest = ViewBag.interest;
+            double interest = ViewBag.Result;
+
     }
+    @{
           <div class="sidebar">
             <h1 class="text-white font-weight-bold mb-4" id="logo">piggyvest</h1>
             <a href="" class="font-weight-bold">Home</a>
@@ -62,7 +68,7 @@
             <a href="" class="font-weight-bold">Account</a>
             <a href="" class="font-weight-bold" id="logout">Logout</a>
         </div>
-    <!-- main content -->
+      <!-- main content -->
         <div class="content">
             <h2 class="font-weigth-bold">Investify</h2>
             
@@ -173,10 +179,10 @@
                                     <img src="~/img/cattle.jpg" class="card-img" alt="cattle farm">
                                   </div>
                                   <div class="text-center">
-    <h4 class="display-4">Simple Interest Calculator</h4>
-</div>
-<div>
-    <form asp-controller="Calc" asp-action="Index" method="post">
+      <h4 class="display-4">Simple Interest Calculator</h4>
+      </div>
+      <div>
+       <form asp-controller="Calc" asp-action="Index" method="post">
                                   <div class="col-md-8">
                                     <div class="card-body">
                                       <h5 class="card-title">Cattle Herder Stock Program Investment</h5>
@@ -197,11 +203,12 @@
         </div> 
 
 
-@{
-    if (ViewBag.Result != null)
-    {
-        <div>
-            <p>@ViewBag.Result</p>
-        </div>
+      @{
+          if (ViewBag.Result != null)
+          {
+              <div>
+                  <p>@ViewBag.Result</p>
+              </div>
+          }
+        }
     }
-}
